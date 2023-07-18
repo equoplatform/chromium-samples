@@ -33,7 +33,7 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven(url = "https://dl.equo.dev/chromium-swt-ce/oss/mvn")
+    maven(url = "https://dl.equo.dev/chromium-swt-ee/oss/mvn")
 }
 
 dependencies {
