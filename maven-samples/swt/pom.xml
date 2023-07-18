@@ -129,27 +129,5 @@
 				<arch>x86_64</arch>
 			</properties>
 		</profile>
-		<profile>
-			<id>amd32</id>
-			<activation>
-				<os>
-					<arch>x86</arch>
-				</os>
-			</activation>
-			<properties>
-				<arch>x86</arch>
-			</properties>
-		</profile>
-		<profile>
-			<id>arm32</id>
-			<activation>
-				<os>
-					<arch>aarch32</arch>
-				</os>
-			</activation>
-			<properties>
-				<arch>aarch32</arch>
-			</properties>
-		</profile>
 	</profiles>
 </project>

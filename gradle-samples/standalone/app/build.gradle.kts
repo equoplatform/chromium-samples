@@ -10,6 +10,11 @@ if (os.contains("linux")) {
 } else if (os.contains("windows")) {
     platform = "win32.win32"
 }
+val archName = System.getProperty("os.arch").toLowerCase()
+val arch = when {
+    archName.contains("amd64") -> "x86_64"
+    else -> "${archName}"
+}
 
 plugins {
     kotlin("jvm") version "1.5.10"

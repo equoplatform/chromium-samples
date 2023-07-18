@@ -14,7 +14,7 @@ if (os.contains("linux")) {
 val archName = System.getProperty("os.arch").toLowerCase()
 val arch = when {
     archName.contains("amd64") -> "x86_64"
-    else -> ""
+    else -> "${archName}"
 }
 
 
