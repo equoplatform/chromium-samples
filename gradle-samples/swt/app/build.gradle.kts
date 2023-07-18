@@ -11,10 +11,9 @@ if (os.contains("linux")) {
 } else if (os.contains("windows")) {
     platform = "win32.win32"
 }
-val archName = System.getProperty("os.arch").toLowerCase()
 val arch = when {
-    archName.contains("amd64") -> "x86_64"
-    else -> "${archName}"
+    System.getProperty("os.arch").toLowerCase().contains("amd64") -> "x86_64"
+    else -> System.getProperty("os.arch").toLowerCase()
 }
 
 
@@ -33,7 +32,7 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven(url = "https://dl.equo.dev/chromium-swt-ee/oss/mvn")
+    maven(url = "https://dl.equo.dev/chromium-swt-ee/equo/mvn")
 }
 
 dependencies {
