@@ -11,11 +11,17 @@ if (os.contains("linux")) {
 } else if (os.contains("windows")) {
     platform = "win32.win32"
 }
+val archName = System.getProperty("os.arch").toLowerCase()
+val arch = when {
+    archName.contains("amd64") -> "x86_64"
+    else -> ""
+}
+
 
 configurations.all {
     resolutionStrategy.eachDependency {
         if (requested.name.contains("org.eclipse.swt.")) {
-            useTarget("${requested.group}:org.eclipse.swt.${platform}.x86_64:${requested.version}")
+            useTarget("${requested.group}:org.eclipse.swt.${platform}.${arch}:${requested.version}")
         }
     }
 }
@@ -31,9 +37,9 @@ repositories {
 }
 
 dependencies {
-    implementation("com.equo:com.equo.chromium.cef.${platform}.x86_64:106.0.0")
+    implementation("com.equo:com.equo.chromium.cef.${platform}.${arch}:106.0.0")
     implementation("com.equo:com.equo.chromium:106.0.0")
-    implementation("org.eclipse.platform:org.eclipse.swt.${platform}.x86_64:3.121.0")
+    implementation("org.eclipse.platform:org.eclipse.swt.${platform}.${arch}:3.121.0")
     implementation("org.eclipse.platform:org.eclipse.swt:3.121.0")
 }
 
