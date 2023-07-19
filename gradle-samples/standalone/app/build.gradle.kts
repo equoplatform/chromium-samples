@@ -10,6 +10,10 @@ if (os.contains("linux")) {
 } else if (os.contains("windows")) {
     platform = "win32.win32"
 }
+val arch = when {
+    System.getProperty("os.arch").toLowerCase().contains("amd64") -> "x86_64"
+    else -> System.getProperty("os.arch").toLowerCase()
+}
 
 plugins {
     kotlin("jvm") version "1.5.10"
@@ -18,11 +22,11 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven(url = "https://dl.equo.dev/chromium-swt-ce/oss/mvn")
+    maven(url = "https://dl.equo.dev/chromium-swt-ee/equo/mvn")
 }
 
 dependencies {
-    implementation("com.equo:com.equo.chromium.cef.${platform}.x86_64:106.0.0")
+    implementation("com.equo:com.equo.chromium.cef.${platform}.${arch}:106.0.0")
     implementation("com.equo:com.equo.chromium:106.0.0")
 }
 
