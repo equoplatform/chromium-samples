@@ -3,7 +3,7 @@
 <target name="Chromium RCP Target">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="https://dl.equo.dev/chromium-swt-ee/jx/p2"/>
+			<repository location="https://dl.equo.dev/chromium-swt-ee/equo/p2/106"/>
 			<unit id="com.equo.chromium.cef.feature.feature.group"/>
 			<unit id="com.equo.chromium.feature.feature.group"/>
 		</location>
