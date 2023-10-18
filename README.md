@@ -51,7 +51,7 @@ Mac:
 Windows:
 
 ```
-./sample.product/target/products/ChromiumRCP/win32/win32/gtk/x86_64/ChromiumRCP.exe
+./sample.product/target/products/ChromiumRCP/win32/win32/x86_64/ChromiumRCP.exe
 ```
 
 ### Gradle applications
