@@ -8,7 +8,9 @@ The samples allow you to run applications that use different toolkits:
 - *SWT* (Standart Widget Toolkit)
 - *Standalone* (plain Java application as Standalone browser wihout UI depdencies)
 - *Windowless* (without GUI window)
+- *RCP* (Eclipse RCP application)
 
+> Our **Chromium RCP application** requires **Java 17** and **Maven 3.9** or later versions in order to run.
 
 ## Run Equo Chromium samples
 
@@ -24,6 +26,32 @@ The *SWT* sample has a *Windowless* mode which you can test by running the comma
 
 ```
 mvn verify -Dwindowless
+```
+
+To build the *RCP* sample:
+
+```
+mvn clean verify
+```
+
+This will build a product called **ChromiumRCP** for the current OS. To run the *RCP* sample:
+
+Linux:
+
+```
+./sample.product/target/products/ChromiumRCP/linux/gtk/x86_64/ChromiumRCP
+```
+
+Mac:
+
+```
+./sample.product/target/products/ChromiumRCP/macosx/cocoa/x86_64/Eclipse.app/Contents/MacOS/ChromiumRCP
+```
+
+Windows:
+
+```
+./sample.product/target/products/ChromiumRCP/win32/win32/x86_64/ChromiumRCP.exe
 ```
 
 ### Gradle applications
