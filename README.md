@@ -54,6 +54,8 @@ Windows:
 ./sample.product/target/products/ChromiumRCP/win32/win32/x86_64/ChromiumRCP.exe
 ```
 
+Import the **RCP** folder as an **Existing project from folder or archive** -> Open the target file **sample.rcp.target**, wait for the dependencies to be downloaded and click on **Set as Active Target Platform** -> Open the product file **sample.rcp.product** inside folder **sample.product**, and click on **Launch an Eclipse RCP Application** to run the sample.
+
 ### Gradle applications
 
 To run a *Gradle* application(gradle-samples folder), you need to go into the project folder(swt or standalone) and run the command:
