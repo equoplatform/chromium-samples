@@ -1,6 +1,8 @@
 
 var platform = ""
 var vmArgs = "-Dempty"
+val chromiumVersion = "106.0.22"
+val chromiumPlatformVersion = "106.0.20"
 val os = System.getProperty("os.name").toLowerCase()
 if (os.contains("linux")) {
     platform = "gtk.linux"
@@ -32,12 +34,12 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven(url = "https://dl.equo.dev/chromium-swt-ee/equo-gpl/mvn")
+    maven(url = "https://dl.equo.dev/chromium-swt-ee/equoSamples/mvn")
 }
 
 dependencies {
-    implementation("com.equo:com.equo.chromium.cef.${platform}.${arch}:106.0.20")
-    implementation("com.equo:com.equo.chromium:106.0.22")
+    implementation("com.equo:com.equo.chromium.cef.${platform}.${arch}:${chromiumPlatformVersion}")
+    implementation("com.equo:com.equo.chromium:${chromiumVersion}")
     implementation("org.eclipse.platform:org.eclipse.swt.${platform}.${arch}:3.121.0")
     implementation("org.eclipse.platform:org.eclipse.swt:3.121.0")
 }
