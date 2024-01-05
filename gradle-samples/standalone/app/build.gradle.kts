@@ -1,14 +1,14 @@
 
 var platform = ""
-var vmArgs = "-Dempty"
-val chromiumVersion = "106.0.22"
-val chromiumPlatformVersion = "106.0.20"
+var vmArgs = mutableListOf<String>()
+val chromiumVersion = "116.0.1"
+val chromiumPlatformVersion = "116.0.1"
 val os = System.getProperty("os.name").toLowerCase()
 if (os.contains("linux")) {
     platform = "gtk.linux"
 } else if (os.contains("mac")) {
     platform = "cocoa.macosx"
-    vmArgs = "-XstartOnFirstThread"
+    vmArgs.add("-XstartOnFirstThread")
 } else if (os.contains("windows")) {
     platform = "win32.win32"
 }
@@ -18,7 +18,7 @@ val arch = when {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.8.20"
     application
 }
 
@@ -33,6 +33,6 @@ dependencies {
 }
 
 application {
-    applicationDefaultJvmArgs = listOf("${vmArgs}")
+    applicationDefaultJvmArgs = vmArgs
     mainClass.set("Standalone.StandaloneKt")
 }

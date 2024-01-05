@@ -9,8 +9,8 @@
 
 	<properties>
 		<maven.compiler>11</maven.compiler>
-		<chromium.version>106.0.22</chromium.version>
-		<chromium.platform.version>106.0.20</chromium.platform.version>
+		<chromium.version>116.0.1</chromium.version>
+		<chromium.platform.version>116.0.1</chromium.platform.version>
 		<flags>-Dempty</flags>
 	</properties>
 
@@ -96,17 +96,6 @@
 			</activation>
 			<properties>
 				<platform>cocoa.macosx</platform>
-			</properties>
-		</profile>
-		<profile>
-			<id>mac-java17</id>
-			<activation>
-				<os>
-					<family>mac</family>
-				</os>
-				<jdk>[17,)</jdk>
-			</activation>
-			<properties>
 				<flags>--add-opens java.desktop/java.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/sun.lwawt=ALL-UNNAMED --add-opens java.desktop/sun.lwawt.macosx=ALL-UNNAMED</flags>
 			</properties>
 		</profile>

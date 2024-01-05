@@ -28,9 +28,7 @@ public class SampleSwing {
 			BrowserView view = BrowserView.newInstance(browser);
 			JFrame frame = new JFrame(SAMPLE_NAME);
 			frame.setDefaultCloseOperation(
-				System.getProperty("os.name").toLowerCase().contains("win")
-				? WindowConstants.EXIT_ON_CLOSE
-				: WindowConstants.DISPOSE_ON_CLOSE
+				WindowConstants.DISPOSE_ON_CLOSE
 			);
 			frame.add(view, BorderLayout.CENTER);
 			frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);

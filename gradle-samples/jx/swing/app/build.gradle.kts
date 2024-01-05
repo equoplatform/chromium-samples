@@ -1,21 +1,23 @@
 
-val chromiumVersion = "106.0.22"
-val chromiumPlatformVersion = "106.0.20"
-val chromiumJxVersion = "106.0.0.0"
+val chromiumVersion = "116.0.1"
+val chromiumPlatformVersion = "116.0.1"
+val chromiumJxVersion = "116.0.0.0"
 val os = System.getProperty("os.name").toLowerCase()
 var vmArgs = mutableListOf<String>()
-if(os.contains("mac") && JavaVersion.current().majorVersion.toInt() <= 16) {
-    vmArgs.addAll(listOf("--add-opens", "java.desktop/java.awt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.awt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.lwawt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.lwawt.macosx=ALL-UNNAMED"))
-}
 val platform = when {
     os.contains("linux") -> "gtk.linux"
-    os.contains("win") -> "win32.win32"
-    os.contains("mac") -> "cocoa.macosx"
+    os.contains("win") -> {
+        "win32.win32"
+    }
+    os.contains("mac") -> {
+        vmArgs.addAll(listOf("--add-opens", "java.desktop/java.awt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.awt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.lwawt=ALL-UNNAMED", "--add-opens", "java.desktop/sun.lwawt.macosx=ALL-UNNAMED"))
+        "cocoa.macosx"
+    }
     else -> ""
 }
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.8.20"
     application
 }
 
