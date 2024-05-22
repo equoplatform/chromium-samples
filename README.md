@@ -39,22 +39,10 @@ mvn clean verify
 
 This will build a product called **ChromiumRCP** for the current OS and arch. We currently support *arm* only on *mac*([Contact us](mailto:support@equo.dev)). To run the *RCP* sample:
 
-Linux:
+To run the *RCP* sample:
 
 ```
-./sample.product/target/products/ChromiumRCP/linux/gtk/x86_64/ChromiumRCP
-```
-
-Mac:
-
-```
-./sample.product/target/products/ChromiumRCP/macosx/cocoa/<ARCH>/Eclipse.app/Contents/MacOS/ChromiumRCP
-```
-
-Windows:
-
-```
-./sample.product/target/products/ChromiumRCP/win32/win32/x86_64/ChromiumRCP.exe
+mvn verify -Drun
 ```
 
 You can also run the *RCP* sample from **Eclipse**:
