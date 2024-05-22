@@ -43,24 +43,11 @@ mvn clean verify
 
 This will build a product called **ChromiumRCP** for the current OS. To run the *RCP* sample:
 
-Linux:
+To run the *RCP* sample:
 
 ```
-./sample.product/target/products/ChromiumRCP/linux/gtk/x86_64/ChromiumRCP
+mvn verify -Drun
 ```
-
-Mac:
-
-```
-./sample.product/target/products/ChromiumRCP/macosx/cocoa/x86_64/Eclipse.app/Contents/MacOS/ChromiumRCP
-```
-
-Windows:
-
-```
-./sample.product/target/products/ChromiumRCP/win32/win32/x86_64/ChromiumRCP.exe
-```
-
 You can also run the *RCP* sample from **Eclipse**:
 
 Import the **RCP** folder as an **Existing project from folder or archive** -> Open the target file **sample.rcp.target**, wait for the dependencies to be downloaded and click on **Set as Active Target Platform** -> Open the product file **sample.rcp.product** inside folder **sample.product**, and click on **Launch an Eclipse RCP Application** to run the sample.
