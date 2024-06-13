@@ -10,9 +10,9 @@
 	<properties>
 		<maven.compiler>11</maven.compiler>
 		<flags>-Dempty</flags>
-		<chromium.version>116.0.1</chromium.version>
-		<chromium.platform.version>116.0.1</chromium.platform.version>
-		<chromium.jx.version>116.0.0.0</chromium.jx.version>
+		<chromium.version>124.0.1</chromium.version>
+		<chromium.platform.version>124.0.1</chromium.platform.version>
+		<chromium.jx.version>124.0.0.0</chromium.jx.version>
 	</properties>
 
 	<repositories>
