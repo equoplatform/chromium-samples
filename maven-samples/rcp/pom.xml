@@ -64,6 +64,11 @@
                             <ws>cocoa</ws>
                             <arch>x86_64</arch>
                         </environment>
+                        <environment>
+                            <os>macosx</os>
+                            <ws>cocoa</ws>
+                            <arch>aarch64</arch>
+                        </environment>
                     </environments>
                 </configuration>
             </plugin>
@@ -142,7 +147,7 @@
             </activation>
             <properties>
                 <maven.exec.phase>verify</maven.exec.phase>
-                <executable>macosx/cocoa/x86_64/Eclipse.app/Contents/MacOS/ChromiumRCP</executable>
+                <executable>macosx/cocoa/${os.arch}/Eclipse.app/Contents/MacOS/ChromiumRCP</executable>
             </properties>
         </profile>
     </profiles>
